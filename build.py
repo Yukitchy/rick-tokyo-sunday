@@ -16,7 +16,7 @@ def route_link(stops):
             + ('&waypoints=' + '%7C'.join(s[1:-1]) if len(s) > 2 else '') + '&travelmode=transit')
 
 DAY1 = [
- dict(id='A', chips=['Starts early, ends early','Jet lag works in your favour','Half day'], name='The market at dawn, tea by noon', tag='Market, garden, matcha',
+ dict(id='A', fee='¥25,000 · half day, about five hours', chips=['Starts early, ends early','Jet lag works in your favour','¥25,000 · half day'], name='The market at dawn, tea by noon', tag='Market, garden, matcha',
   why='On day three the clock still has you awake at five, so we use it instead of fighting it. A fish market is on your interest list and so is a tea ceremony, and both sit within two kilometres of your hotel. You are back by early afternoon with the evening free to pack for Hakone.',
   steps=[('7:30','Leave the hotel','Ten minutes by taxi. You will most likely be awake anyway.'),
          ('7:45','Tsukiji Outer Market','Four blocks, around four hundred shops, at the hour the cooks are still buying. Tamagoyaki straight off the grill, scallops on the shell, dried bonito shaved in front of you. We eat as we walk.'),
@@ -32,7 +32,7 @@ DAY1 = [
   good='Uses the jet lag instead of fighting it, and gives you the whole afternoon back before the Hakone train.',
   mind='Sunday closes some of the market. Knives are better bought on Oct 6 &mdash; see course D &mdash; so you are not carrying a blade around Japan for three weeks.',
   links=[('Tsukiji Outer Market (official)','https://www.tsukiji.or.jp/english/'),('Hama-rikyu Gardens','https://www.tokyo-park.or.jp/teien/en/hama-rikyu/'),('Nakajima no Ochaya','https://www.tokyo-park.or.jp/teien/en/hama-rikyu/facilities.html')]),
- dict(id='B', chips=['Both museums off your list','Indoors, any weather','Warm-up for the sumo in Osaka'], name='Edo Tokyo and Hokusai', tag='Two museums, ten minutes apart',
+ dict(id='B', fee='¥40,000 · full day', chips=['Both museums off your list','Indoors, any weather','¥40,000 · full day'], name='Edo Tokyo and Hokusai', tag='Two museums, ten minutes apart',
   why='Your interest list says &ldquo;Edo Tokyo museum / Hokusai museum&rdquo;. They are in the same neighbourhood, a ten-minute walk apart, and Sunday is the day both are open. Ryogoku is also the sumo district, which makes it a useful warm-up for Osaka on the 28th.',
   steps=[('10:00','Leave the hotel','About 25 minutes by train. A late start after the baseball.'),
          ('10:30','Edo-Tokyo Museum','You enter by walking across a full-size replica of the old Nihonbashi bridge, and the city unfolds underneath: a whole Edo street, a tenement house you can step into, then the earthquake, the war and the neon years. Two hours, all indoors, benches and lifts throughout. 800 yen.'),
@@ -48,7 +48,7 @@ DAY1 = [
   good='Two things off the interest list in one afternoon, both indoors, both a short walk apart. The best possible preparation for the sumo on Sept 28.',
   mind='Both museums usually close on Mondays, so the 20th is the day this works. Tickets are sold at the door. Nothing here needs booking except the chanko table.',
   links=[('Edo-Tokyo Museum (official)','https://www.edo-tokyo-museum.or.jp/en/'),('Sumida Hokusai Museum (official)','https://hokusai-museum.jp/?lang=en'),('Ryogoku Kokugikan','https://www.sumo.or.jp/EnKokugikan/')]),
- dict(id='C', chips=['Music and dancing, outdoors','Best for the jet lag','No tickets needed'], name='Meiji shrine and a Sunday in the park', tag='Daylight, brass bands, rockabilly',
+ dict(id='C', fee='¥40,000 · full day', chips=['Music and dancing, outdoors','No tickets needed','¥40,000 · full day'], name='Meiji shrine and a Sunday in the park', tag='Daylight, brass bands, rockabilly',
   why='Music and dance are on your list and nothing else on the trip covers them. Sunday is the one day Yoyogi Park fills with people playing, and the shrine forest next door is the flattest good walk in Tokyo.',
   steps=[('9:30','Leave the hotel','About 20 minutes by train to Harajuku.'),
          ('9:50','Meiji Jingu','A wide gravel path through a man-made forest of 100,000 donated trees, benches the whole way. On a Sunday morning you often catch a wedding procession crossing the courtyard under a red umbrella.'),
@@ -67,7 +67,7 @@ DAY1 = [
 ]
 
 DAY2 = [
- dict(id='D', chips=['The one day the knife street is open','Buy it last, not first','Half day, afternoon start'], name='Knives, and something to take home', tag='Kappabashi and Asakusa',
+ dict(id='D', fee='¥25,000 · half day, afternoon', chips=['The one day the knife street is open','Buy it last, not first','¥25,000 · half day'], name='Knives, and something to take home', tag='Kappabashi and Asakusa',
   why='Knife sharpening is on your list, and this is the day to do it. Kappabashi&rsquo;s knife shops close on Sundays, so Sept 20 was never going to work &mdash; and buying a blade at the start would mean carrying it through Hakone, Takayama, Kanazawa, Miyajima, Osaka and Kyoto. Two days before you fly, it goes straight into the suitcase.',
   steps=[('14:00','Leave the hotel','About 35 minutes from Shinjuku. A slow start after Disney.'),
          ('14:30','Kappabashi kitchen town','Eight hundred metres of nothing but kitchen equipment, where Tokyo&rsquo;s restaurants buy their tools. We go to the knife shops that sharpen in the window, you hold half a dozen until one fits your hand, and they engrave your name in the blade while we walk on.'),
@@ -82,7 +82,7 @@ DAY2 = [
   good='The one errand on your list that genuinely belongs at the end of the trip. Sitting down for dinner at the end of it.',
   mind='Knives must go in checked baggage, so we box it for the flight. Kappabashi shops close around 17:00, which is why we start at two.',
   links=[('Kappabashi Kitchen Town','https://www.kappabashi.or.jp/en/'),('Senso-ji (official)','https://www.senso-ji.jp/english/')]),
- dict(id='E', chips=['No trains at all','Everything within walking distance','Two or three hours'], name='Shinjuku, without going anywhere', tag='The rest day, with a view',
+ dict(id='E', fee='¥25,000 · half day, about five hours', chips=['No trains at all','Everything within walking distance','¥25,000 · half day'], name='Shinjuku, without going anywhere', tag='The rest day, with a view',
   why='Eighteen days in, the day after twelve hours at DisneySea, and the day before the opera and dinner in Odaiba. This is the version that asks almost nothing of you: no train, no ticket, and you can turn back to the hotel at any point.',
   steps=[('10:30','Walk to the Metropolitan Government Building','Ten minutes from the hotel lobby, mostly under cover.'),
          ('10:45','The observatory, 202 metres up','Free, no ticket, a lift straight to the top. On a clear October morning Fuji is on the west side of the floor, and the whole route you have just travelled is somewhere in that view.'),
@@ -119,9 +119,10 @@ def detail(c):
     ln = ' '.join(f'<a href="{u}" target="_blank" rel="noopener">{html.escape(t)} ↗</a>' for t, u in c['links'])
     sub = ('Sept 20' if c['id'] in 'ABC' else 'Oct 6') + f': we choose course {c["id"]} ({c["name"]})'
     return f'''<section class="detail" id="detail-{c['id']}" hidden><div class="dwrap"><div class="dtop"></div>
-<div class="dhead"><div><p class="kicker">Course {c['id']} · {html.escape(c['tag'])}</p><h2>{html.escape(c['name'])}</h2></div>
+<div class="dhead"><div><p class="kicker">Course {c['id']} · {html.escape(c['tag'])} · {c['fee']}</p><h2>{html.escape(c['name'])}</h2></div>
 <button class="dclose" type="button" aria-label="Close">Close ✕</button></div>
 <p class="why">{html.escape(c['why'])}</p>
+<p class="moves"><b>Guide fee {c['fee']}.</b> Entry tickets, trains, taxis and meals are settled on the day, the same way they were with Yuri-san in Takayama and Kanazawa.</p>
 <div class="photos">{ph}</div>
 <div class="dgrid">
 <div><h3>The day</h3><ol class="steps">{st}</ol></div>
@@ -292,7 +293,7 @@ footer.wrap{{padding:26px 20px 60px;font-size:13px;color:var(--mute);border-top:
 {''.join(detail(c) for c in DAY2)}
 <div class="sechead"><span class="n">3</span><div><b>What it costs</b> <span>The same basis as Yuri-san on the Takayama and Kanazawa days.</span></div></div>
 <div class="arrival">
-<div><p><b>Half day, three to four hours &mdash; &yen;25,000</b><br><b>Full day, six hours or more &mdash; &yen;40,000</b></p>
+<div><p><b>Half day, three to four hours &mdash; ¥25,000</b><br><b>Full day, six hours or more &mdash; ¥40,000</b></p>
 <p>Sept 20: course A is a half day. B and C are full days.<br>Oct 6: D and E are both half days.</p>
 <p class="hint">The fee covers my time only, exactly as it did with Yuri-san: entry tickets, trains, taxis and meals are settled on the day. Nothing is owed if you wake up and decide you would rather not.</p></div>
 <div><p><b>And one honest word about Oct 6.</b></p>
