@@ -15,23 +15,22 @@ def route_link(stops):
     return ('https://www.google.com/maps/dir/?api=1&origin=' + s[0] + '&destination=' + s[-1]
             + ('&waypoints=' + '%7C'.join(s[1:-1]) if len(s) > 2 else '') + '&travelmode=transit')
 
-COURSES = [
- dict(id='A', chips=['Everything within 2 km of the hotel','Three things off your interest list','No tickets needed'], name='Tsukiji, knives and tea', tag='Market, knives, matcha',
-  why='Your interest list has a fish market, knife sharpening and a tea ceremony on it, and none of them are booked anywhere on the trip. All three sit within two kilometres of your hotel, so this is the day that quietly clears the list.',
-  steps=[('9:30','Leave the hotel','Ten minutes by taxi, or a flat twenty-five minute walk. Tsukiji wakes up early and is still busy at ten.'),
-         ('9:45','Tsukiji Outer Market','Four blocks, around four hundred shops. Tamagoyaki straight off the grill, scallops on the shell, knives, dried bonito, sea urchin. We eat as we walk.'),
-         ('11:00','The knife shops','Tsukiji is where Tokyo chefs buy and sharpen their knives. We watch a whetstone in use, you hold a few, and if one fits your hand we get it engraved with your name.'),
-         ('12:00','Lunch in the market','See the three picks below.'),
-         ('13:30','Hama-rikyu Gardens','Ten minutes on foot. A 400-year-old shogun&rsquo;s garden with saltwater ponds, sitting inside the modern skyline.'),
-         ('14:00','Matcha at Nakajima no Ochaya','A tea house standing out over the pond on stilts. Matcha whisked in front of you with a seasonal sweet, sitting on tatami with the water on three sides. The closest thing to a tea ceremony that needs no booking.'),
-         ('15:30','Back at the hotel','A twenty-minute walk or a short taxi, in time to pack for Hakone.')],
+DAY1 = [
+ dict(id='A', chips=['Starts early, ends early','Jet lag works in your favour','Half day'], name='The market at dawn, tea by noon', tag='Market, garden, matcha',
+  why='On day three the clock still has you awake at five, so we use it instead of fighting it. A fish market is on your interest list and so is a tea ceremony, and both sit within two kilometres of your hotel. You are back by early afternoon with the evening free to pack for Hakone.',
+  steps=[('7:30','Leave the hotel','Ten minutes by taxi. You will most likely be awake anyway.'),
+         ('7:45','Tsukiji Outer Market','Four blocks, around four hundred shops, at the hour the cooks are still buying. Tamagoyaki straight off the grill, scallops on the shell, dried bonito shaved in front of you. We eat as we walk.'),
+         ('9:30','Breakfast in the market','A sit-down bowl once the walking is done.'),
+         ('10:30','Hama-rikyu Gardens','Ten minutes on foot. A 400-year-old shogun&rsquo;s garden with saltwater ponds, sitting inside the modern skyline. Flat paths, benches all the way round.'),
+         ('11:00','Matcha at Nakajima no Ochaya','A tea house standing out over the pond on stilts. Matcha whisked in front of you with a seasonal sweet, sitting on tatami with the water on three sides. The closest thing to a tea ceremony that needs no booking.'),
+         ('12:30','Back at the hotel','A twenty-minute walk or a short taxi. The afternoon is yours.')],
   stops=['The Blossom Hibiya Tokyo','Tsukiji Outer Market','Hamarikyu Gardens','The Blossom Hibiya Tokyo'],
   moves='Hotel &rarr; Tsukiji 10 min by taxi. Market on foot. Market &rarr; garden 10 min on foot. Garden &rarr; hotel about 20 min on foot.',
   food=[('Tsukiji Tamagoyaki Marutake','Tsukiji &middot; grilled egg on a stick','The egg stand people queue at from nine in the morning. Warm, sweet, a hundred yen, eaten standing up. The right first bite of the market.','Tsukiji Marutake Tamagoyaki'),
         ('Kitsuneya','Tsukiji &middot; beef and offal over rice','A market stall with a few stools, simmering the same pot since the 1940s. The workers&rsquo; breakfast, not a tourist dish.','Kitsuneya Tsukiji'),
         ('Tsukiji Itadori','Tsukiji &middot; seafood bowls, sit-down','If you want a table and a chair rather than a stool: tuna bowls and grilled fish, with a menu in English.','Tsukiji Itadori Honten')],
-  good='Three interests in one morning, and almost no train time. Easy to cut short at any point.',
-  mind='Sunday closes some of the market, so I check on Saturday which knife shops are open and route us to those. The tea house takes its last order at 16:30.',
+  good='Uses the jet lag instead of fighting it, and gives you the whole afternoon back before the Hakone train.',
+  mind='Sunday closes some of the market. Knives are better bought on Oct 6 &mdash; see course D &mdash; so you are not carrying a blade around Japan for three weeks.',
   links=[('Tsukiji Outer Market (official)','https://www.tsukiji.or.jp/english/'),('Hama-rikyu Gardens','https://www.tokyo-park.or.jp/teien/en/hama-rikyu/'),('Nakajima no Ochaya','https://www.tokyo-park.or.jp/teien/en/hama-rikyu/facilities.html')]),
  dict(id='B', chips=['Both museums off your list','Indoors, any weather','Warm-up for the sumo in Osaka'], name='Edo Tokyo and Hokusai', tag='Two museums, ten minutes apart',
   why='Your interest list says &ldquo;Edo Tokyo museum / Hokusai museum&rdquo;. They are in the same neighbourhood, a ten-minute walk apart, and Sunday is the day both are open. Ryogoku is also the sumo district, which makes it a useful warm-up for Osaka on the 28th.',
@@ -67,6 +66,40 @@ COURSES = [
   links=[('Meiji Jingu (official)','https://www.meijijingu.or.jp/en/'),('Yoyogi Park','https://www.tokyo-park.or.jp/park/yoyogi/'),('Shibuya crossing','https://www.google.com/maps/search/?api=1&query=Shibuya+Scramble+Crossing')]),
 ]
 
+DAY2 = [
+ dict(id='D', chips=['The one day the knife street is open','Buy it last, not first','Half day, afternoon start'], name='Knives, and something to take home', tag='Kappabashi and Asakusa',
+  why='Knife sharpening is on your list, and this is the day to do it. Kappabashi&rsquo;s knife shops close on Sundays, so Sept 20 was never going to work &mdash; and buying a blade at the start would mean carrying it through Hakone, Takayama, Kanazawa, Miyajima, Osaka and Kyoto. Two days before you fly, it goes straight into the suitcase.',
+  steps=[('14:00','Leave the hotel','About 35 minutes from Shinjuku. A slow start after Disney.'),
+         ('14:30','Kappabashi kitchen town','Eight hundred metres of nothing but kitchen equipment, where Tokyo&rsquo;s restaurants buy their tools. We go to the knife shops that sharpen in the window, you hold half a dozen until one fits your hand, and they engrave your name in the blade while we walk on.'),
+         ('16:00','Senso-ji and Nakamise','Ten minutes on foot. Tokyo&rsquo;s oldest temple, the big red lantern, and the old shopping street in front of it &mdash; the easiest place in the city to finish the souvenir list.'),
+         ('17:30','Dinner','See the three picks below.'),
+         ('19:00','Back at the hotel','About 35 minutes, with the knife wrapped and boxed for the flight.')],
+  stops=['Hyatt Regency Tokyo','Kappabashi Kitchen Town','Sensoji Temple','Hyatt Regency Tokyo'],
+  moves='Hotel &rarr; Tawaramachi about 35 min by train. Kappabashi on foot. Kappabashi &rarr; Senso-ji 10 min on foot. Asakusa &rarr; hotel about 35 min.',
+  food=[('Daikokuya Tempura','Asakusa &middot; tendon since 1887','A bowl of tempura over rice in a wooden old-town building. The queue moves fast and the menu is one dish.','Daikokuya Tempura Asakusa'),
+        ('Asakusa Imahan Kokusai-dori','Asakusa &middot; sukiyaki','Beef cooked at your table in a private tatami room. The evening to spend a little, two days before you fly home.','Asakusa Imahan Kokusaidori Honten'),
+        ('Hoppy Street','Asakusa &middot; open-front stalls','A street of tiny grills under awnings, where people sit outside with a beer and a plate of something skewered. Warm evening, no reservation, easy to leave early.','Hoppy Street Asakusa')],
+  good='The one errand on your list that genuinely belongs at the end of the trip. Sitting down for dinner at the end of it.',
+  mind='Knives must go in checked baggage, so we box it for the flight. Kappabashi shops close around 17:00, which is why we start at two.',
+  links=[('Kappabashi Kitchen Town','https://www.kappabashi.or.jp/en/'),('Senso-ji (official)','https://www.senso-ji.jp/english/')]),
+ dict(id='E', chips=['No trains at all','Everything within walking distance','Two or three hours'], name='Shinjuku, without going anywhere', tag='The rest day, with a view',
+  why='Eighteen days in, the day after twelve hours at DisneySea, and the day before the opera and dinner in Odaiba. This is the version that asks almost nothing of you: no train, no ticket, and you can turn back to the hotel at any point.',
+  steps=[('10:30','Walk to the Metropolitan Government Building','Ten minutes from the hotel lobby, mostly under cover.'),
+         ('10:45','The observatory, 202 metres up','Free, no ticket, a lift straight to the top. On a clear October morning Fuji is on the west side of the floor, and the whole route you have just travelled is somewhere in that view.'),
+         ('12:00','Lunch at Tsunahachi','Tempura fried in front of you at the counter, in a Shinjuku shop that opened in 1924.'),
+         ('13:30','Shinjuku Gyoen','A 58-hectare garden with three gardens inside it: a Japanese pond garden, a French formal one and an English lawn. Benches everywhere. We sit as much as we walk.'),
+         ('15:30','Back at the hotel','On foot, in time for a nap before dinner.')],
+  stops=['Hyatt Regency Tokyo','Tokyo Metropolitan Government Building','Tsunahachi Shinjuku','Shinjuku Gyoen National Garden','Hyatt Regency Tokyo'],
+  moves='All of it on foot from the hotel. Observatory 10 min. Observatory &rarr; Tsunahachi 12 min. Tsunahachi &rarr; Gyoen 10 min. Gyoen &rarr; hotel 15 min, or a five-minute taxi.',
+  food=[('Tsunahachi Shinjuku','Shinjuku &middot; tempura, since 1924','Counter seats, one piece at a time, straight from the oil. The dependable choice in a neighbourhood full of noise.','Tsunahachi Shinjuku Honten'),
+        ('Omoide Yokocho','Shinjuku &middot; grilled skewers in an alley','Sixty tiny bars in two narrow lanes left over from the 1940s, six seats each. Best at dusk, and thirty seconds from the station.','Omoide Yokocho Shinjuku'),
+        ('Hotel dinner','Shinjuku &middot; in the building','No shame in it on day eighteen. I can book a table downstairs and leave you to it.','Hyatt Regency Tokyo')],
+  good='Nothing to book, nothing to catch, and the whole thing is cancellable that morning if you would rather sleep.',
+  mind='Honestly: doing nothing at all on Oct 6 is also a good answer. See the note below.',
+  links=[('Tokyo Metropolitan Government observatories','https://www.yokoso.metro.tokyo.lg.jp/tenbou/en/'),('Shinjuku Gyoen (official)','https://www.env.go.jp/garden/shinjukugyoen/english/')]),
+]
+COURSES = DAY1 + DAY2
+
 def menu(c):
     x = PH[c['id']]['card']
     ch = ''.join(f'<li>{html.escape(t)}</li>' for t in c['chips'])
@@ -84,7 +117,7 @@ def detail(c):
                  f'<i>Open in Google Maps ↗</i></span></a>'
                  for (n, a, d, q), im in zip(c['food'], PH[c['id']]['food']))
     ln = ' '.join(f'<a href="{u}" target="_blank" rel="noopener">{html.escape(t)} ↗</a>' for t, u in c['links'])
-    sub = f'Sept 20 in Tokyo: we choose course {c["id"]} ({c["name"]})'
+    sub = ('Sept 20' if c['id'] in 'ABC' else 'Oct 6') + f': we choose course {c["id"]} ({c["name"]})'
     return f'''<section class="detail" id="detail-{c['id']}" hidden><div class="dwrap"><div class="dtop"></div>
 <div class="dhead"><div><p class="kicker">Course {c['id']} · {html.escape(c['tag'])}</p><h2>{html.escape(c['name'])}</h2></div>
 <button class="dclose" type="button" aria-label="Close">Close ✕</button></div>
@@ -132,7 +165,7 @@ HERO_JS = """
 
 credits = '; '.join(html.escape(x['title'].replace('File:','')) + ' (' + x['lic'] + ')' for v in PH.values() for x in [v['card']] + v['detail'] + v['food'])
 page = f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Sunday in Tokyo: three ways to spend September 20</title><meta name="robots" content="noindex">
+<title>Two open days in Tokyo: September 20 and October 6</title><meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{{--bg:#fffdf6;--card:#fff;--ink:#111;--mute:#767065;--line:#eae4d6;--acc:#1a5c3a;--r:10px}}
@@ -239,29 +272,35 @@ footer.wrap{{padding:26px 20px 60px;font-size:13px;color:var(--mute);border-top:
 }}
 </style></head><body>
 <header class="hero">
-<div class="hpic"><div class="slides">{''.join(f'<img src="{PH[c["id"]]["card"]["thumb"]}" alt="{html.escape(c["name"])}" data-course="{c["id"]}" data-name="{html.escape(c["name"])}">' for c in COURSES)}</div>
+<div class="hpic"><div class="slides">{''.join(f'<img src="{PH[c["id"]]["card"]["thumb"]}" alt="{html.escape(c["name"])}" data-course="{c["id"]}" data-name="{html.escape(c["name"])}">' for c in DAY1)}</div>
 <div class="wrap hcap">
-<p class="kicker">Tokyo · Sunday, September 20</p>
-<h1>Your one free day <span class="nb">in Tokyo.</span></h1>
-<div class="snav"><button class="slabel" type="button"></button><div class="dots">{''.join(f'<button type="button" aria-label="Show course {c["id"]}"></button>' for c in COURSES)}</div></div>
+<p class="kicker">Tokyo · Sept 20 and Oct 6</p>
+<h1>Your two open days <span class="nb">in Tokyo.</span></h1>
+<div class="snav"><button class="slabel" type="button"></button><div class="dots">{''.join(f'<button type="button" aria-label="Show course {c["id"]}"></button>' for c in DAY1)}</div></div>
 </div></div>
 <div class="wrap hbody">
-<p>Baseball on Saturday, Hakone on Monday morning. Sunday is the only open day on the Tokyo half of your trip, so here are three ways to spend it. Each one is built around something already on your interest list.</p>
-<ul class="facts"><li><b>Guide</b> Yuuki</li><li><b>Time</b> about 9:30–15:30</li><li><b>Group</b> Rick and Linda</li><li><b>Start and end</b> The Blossom Hibiya</li></ul>
+<p>Twenty nights, and two days with nothing written on them: Sunday Sept 20 at the start, Tuesday Oct 6 near the end. Each course below is built around something from your interests list that is not booked anywhere else &mdash; and sized for how tired you are likely to be that day.</p>
+<ul class="facts"><li><b>Guide</b> Yuuki</li><li><b>Sept 20</b> half or full day</li><li><b>Oct 6</b> half day</li><li><b>Start and end</b> your hotel</li></ul>
 </div>
 </header>
 <div class="wrap">
-<div class="sechead"><span class="n">1</span><div><b>Pick a course</b> <span>Tap one to see the plan, the route and where we eat.</span></div></div>
-<div class="menu">{''.join(menu(c) for c in COURSES)}</div>
-{''.join(detail(c) for c in COURSES)}
-<div class="sechead"><span class="n">2</span><div><b>The weekend around it</b> <span>Saturday and Monday are already fixed, so Sunday is built to fit between them.</span></div></div>
+<div class="sechead"><span class="n">1</span><div><b>Sunday, September 20</b> <span>Day three, jet lag still with you, and the Hakone train at 8:04 the next morning. Everything here is built to end early.</span></div></div>
+<div class="menu">{''.join(menu(c) for c in DAY1)}</div>
+{''.join(detail(c) for c in DAY1)}
+<div class="sechead"><span class="n">2</span><div><b>Tuesday, October 6</b> <span>Day eighteen, the day after DisneySea, from the Hyatt in Shinjuku. Both of these are short on purpose.</span></div></div>
+<div class="menu">{''.join(menu(c) for c in DAY2)}</div>
+{''.join(detail(c) for c in DAY2)}
+<div class="sechead"><span class="n">3</span><div><b>What it costs</b> <span>The same basis as Yuri-san on the Takayama and Kanazawa days.</span></div></div>
 <div class="arrival">
-<div><p><b>Sat 19</b> &mdash; 14:00 baseball at Tokyo Dome, dinner at Ginza Kagari.<br><b>Sun 20</b> &mdash; open. This page.<br><b>Mon 21</b> &mdash; 8:04 train from Shimbashi to Hakone.</p>
-<p class="hint">Every course ends by about 15:30 so the evening stays free for packing and an early night before the Hakone train. If you would rather rest after the flight and the game, say so and we drop it &mdash; no hard feelings at all.</p></div>
-<div class="mapbox"><iframe src="{emb('The Blossom Hibiya Tokyo')}" loading="lazy" title="The Blossom Hibiya and central Tokyo" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+<div><p><b>Half day, three to four hours &mdash; &yen;25,000</b><br><b>Full day, six hours or more &mdash; &yen;40,000</b></p>
+<p>Sept 20: course A is a half day. B and C are full days.<br>Oct 6: D and E are both half days.</p>
+<p class="hint">The fee covers my time only, exactly as it did with Yuri-san: entry tickets, trains, taxis and meals are settled on the day. Nothing is owed if you wake up and decide you would rather not.</p></div>
+<div><p><b>And one honest word about Oct 6.</b></p>
+<p>It lands the day after twelve hours at DisneySea, and the day before the opera and dinner with Greg and Ann in Odaiba. If you get to that morning and the answer is &ldquo;we are staying in&rdquo;, that is a good answer, and I would rather you spend the day that way than push through it.</p>
+<p class="hint">That is why both Oct 6 courses are half days that start late, need no tickets, and can be called off at breakfast. The knives are the one thing I would argue for &mdash; Kappabashi is shut on Sundays, so the 6th is the only day it is open while you are in Tokyo.</p></div>
 </div>
 </div>
-<footer class="wrap"><p>Reply to Yuuki with A, B or C &mdash; or with &ldquo;none, we will rest&rdquo;. Times are approximate and can move earlier or later on the day.</p>
+<footer class="wrap"><p>Reply to Yuuki with a letter for each day &mdash; or with &ldquo;none, we will rest&rdquo;, which is a real answer and not a disappointing one. Times are approximate and can move earlier or later on the day.</p>
 <details class="cred"><summary>Photo credits</summary><p>{credits}, via Wikimedia Commons.</p></details></footer>
 <script>
 (function(){{
